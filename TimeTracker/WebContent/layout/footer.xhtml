@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Time Tracker v0.1</title>
+	<style type="text/css">
+.ui-layout,.ui-layout-doc,.ui-layout-unit,.ui-layout-wrap,.ui-layout-bd,.ui-layout-hd
+	{
+	border: none;
+}
+
+.ui-top,.ui-top .ui-layout,.ui-top .ui-layout-bd,.ui-top .ui-layout-unit
+	{
+	background-image: none;
+	background-color: blue;
+}
+
+.myLayoutStyleClass .ui-layout-unit-content {
+	background: blue;
+}
+</style>
+</h:head>
+
+<h:body>
+	<p:layout fullPage="true">
+		<ui:composition>
+			<p:layoutUnit position="south" size="25"
+				styleClass="ui-top myLayoutStyleClass">
+				<h:outputText value="Test South" />
+			</p:layoutUnit>
+		</ui:composition>
+		<p:layoutUnit position="center"></p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>

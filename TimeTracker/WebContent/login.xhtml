@@ -11,34 +11,46 @@
 	<!-- <ui:composition /> -->
 	<title>Time Tracker v0.1</title>
 	<style type="text/css">
-		.ui-layout,.ui-layout-doc,.ui-layout-unit,.ui-layout-wrap,.ui-layout-bd,.ui-layout-hd {
-			border: none;
-		}
-	</style>
+.ui-layout,.ui-layout-doc,.ui-layout-unit,.ui-layout-wrap,.ui-layout-bd,.ui-layout-hd
+	{
+	border: none;
+}
+
+.ui-top,.ui-top .ui-layout,.ui-top .ui-layout-bd,.ui-top .ui-layout-unit
+	{
+	background-image: none;
+	background-color: blue;
+}
+
+.myLayoutStyleClass .ui-layout-unit-content {
+	background: blue;
+}
+</style>
 </h:head>
 
 <h:body>
-	<p:layout fullPage="true">
-		<p:layoutUnit position="north" size="200">
-			<h:outputText value="Test North" />
-		</p:layoutUnit>
-		<p:layoutUnit position="south" size="100">
-			<h:outputText value="Test South" />
-		</p:layoutUnit>
-		<p:layoutUnit position="center" size="1000" >
-			<h:form id="loginForm" prependId="false">
-				<h:panelGrid columns="2">
-					<p:outputLabel value="User ID :" />
-					<p:inputText id="j_username" required="true" />
+	<ui:composition template="/layout/template.xhtml">
+		<ui:define name="content">
+			<p:layout>
+				<p:layoutUnit position="north" size="150" />
+				<p:layoutUnit position="west" size="500" />
+				<p:layoutUnit position="center">
+					<h:form id="loginForm" prependId="false">
+						<h:panelGrid columns="2">
+							<p:outputLabel value="User ID :" />
+							<p:inputText id="j_username" required="true" />
 
-					<p:outputLabel value="Password :" />
-					<p:password id="j_password" required="true" />
+							<p:outputLabel value="Password :" />
+							<p:password id="j_password" required="true" />
 
-					<p:commandButton type="submit" value="Login" action="#{loginBean.login}" ajax="false" />
+							<p:commandButton type="submit" value="Login"
+								action="#{loginBean.login}" ajax="false" />
 							<p:commandButton type="reset" value="Reset" />
-				</h:panelGrid>
-			</h:form>
-		</p:layoutUnit>
-	</p:layout>
+						</h:panelGrid>
+					</h:form>
+				</p:layoutUnit>
+			</p:layout>
+		</ui:define>
+	</ui:composition>
 </h:body>
 </html>
