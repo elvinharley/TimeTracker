@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<!-- <ui:composition /> -->
+	<title>Time Tracker v0.1</title>
+	<style type="text/css">
+		.ui-layout,.ui-layout-doc,.ui-layout-unit,.ui-layout-wrap,.ui-layout-bd,.ui-layout-hd {
+			border: none;
+		}
+	</style>
+</h:head>
+
+<h:body>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="200">
+			<h:outputText value="Test North" />
+		</p:layoutUnit>
+		<p:layoutUnit position="south" size="100">
+			<h:outputText value="Test South" />
+		</p:layoutUnit>
+		<p:layoutUnit position="center" size="1000" >
+			<h:form id="loginForm" prependId="false">
+				<h:panelGrid columns="2">
+					<p:outputLabel value="User ID :" />
+					<p:inputText id="j_username" required="true" />
+
+					<p:outputLabel value="Password :" />
+					<p:password id="j_password" required="true" />
+
+					<p:commandButton type="submit" value="Login" action="#{loginBean.login}" ajax="false" />
+							<p:commandButton type="reset" value="Reset" />
+				</h:panelGrid>
+			</h:form>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>
